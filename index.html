@@ -7,28 +7,13 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto&display=swap" rel="stylesheet" />
   <style>
-    body {
-      font-family: 'Roboto', sans-serif;
-    }
-    h1, h2, h3 {
-      font-family: 'Playfair Display', serif;
-    }
+    body { font-family: 'Roboto', sans-serif; }
+    h1, h2, h3 { font-family: 'Playfair Display', serif; }
     .hidden { display: none; }
-    .flag {
-      cursor: pointer;
-      width: 24px;
-      height: 16px;
-      margin-left: 8px;
-      border: 1px solid transparent;
-    }
-    .flag.selected {
-      border-color: gold;
-    }
+    .flag { cursor: pointer; width: 24px; height: 16px; margin-left: 8px; border: 1px solid transparent; }
+    .flag.selected { border-color: gold; }
   </style>
 </head>
 <body class="bg-black text-white">
@@ -48,23 +33,15 @@
     <p class="mt-4 text-lg lang-en">Airport – City – Intercity</p>
     <p class="mt-4 text-lg lang-ru hidden">Летище – Град – Междуградски</p>
 
-    <button
-      class="mt-8 bg-yellow-500 text-black px-6 py-2 rounded font-semibold hover:bg-yellow-400 transition lang-en"
-    >
-      Book Now
-    </button>
-    <button
-      class="mt-8 bg-yellow-500 text-black px-6 py-2 rounded font-semibold hover:bg-yellow-400 transition lang-ru hidden"
-    >
-      Резервирай сега
-    </button>
+    <button class="mt-8 bg-yellow-500 text-black px-6 py-2 rounded font-semibold hover:bg-yellow-400 transition lang-en">Book Now</button>
+    <button class="mt-8 bg-yellow-500 text-black px-6 py-2 rounded font-semibold hover:bg-yellow-400 transition lang-ru hidden">Резервирай сега</button>
 
     <p class="mt-8 lang-en">For prices, please refer to our contacts.</p>
     <p class="mt-8 lang-ru hidden">За цени, моля свържете се с нас.</p>
 
     <div class="mt-12 max-w-lg mx-auto">
       <img
-        src="https://cdn.pixabay.com/photo/2017/02/15/10/39/opel-zafira-2068746_960_720.jpg"
+        src="https://upload.wikimedia.org/wikipedia/commons/7/7f/Opel_Zafira_C_1.6_120_PS_2009_02.JPG"
         alt="Opel Zafira 2018"
         class="rounded-lg shadow-lg max-w-full h-auto mx-auto"
       />
@@ -81,10 +58,7 @@
       <input type="text" name="pickup" placeholder="Pickup Location" required class="p-3 rounded" />
       <input type="text" name="dropoff" placeholder="Drop-off Location" required class="p-3 rounded" />
       <input type="datetime-local" name="datetime" required class="p-3 rounded" />
-      <button
-        type="submit"
-        class="col-span-full bg-yellow-500 text-black px-6 py-2 rounded font-semibold hover:bg-yellow-400 transition"
-      >
+      <button type="submit" class="col-span-full bg-yellow-500 text-black px-6 py-2 rounded font-semibold hover:bg-yellow-400 transition">
         <span class="lang-en">Send</span>
         <span class="lang-ru hidden">Изпрати</span>
       </button>
@@ -95,52 +69,30 @@
   <section class="max-w-5xl mx-auto px-6 py-16">
     <h2 class="text-3xl font-semibold text-yellow-400 mb-6 lang-en">Customer Reviews</h2>
     <h2 class="text-3xl font-semibold text-yellow-400 mb-6 lang-ru hidden">Отзиви на клиенти</h2>
-
     <div id="reviewsList" class="space-y-4 text-gray-200">
-      <blockquote class="border-l-4 border-yellow-500 pl-4 italic">
-        “Professional and punctual. 10/10” <br />
-        <strong>Ivan S.</strong>
-      </blockquote>
+      <blockquote class="border-l-4 border-yellow-500 pl-4 italic">“Professional and punctual. 10/10” <br /><strong>Ivan S.</strong></blockquote>
     </div>
 
     <!-- Add review form -->
     <form id="reviewForm" class="mt-8 space-y-4 text-black max-w-md">
-      <input
-        type="text"
-        id="reviewerName"
-        placeholder="Your Name"
-        required
-        class="w-full p-3 rounded"
-      />
-      <textarea
-        id="reviewText"
-        placeholder="Your Review"
-        rows="3"
-        required
-        class="w-full p-3 rounded"
-      ></textarea>
-      <button
-        type="submit"
-        class="bg-yellow-500 text-black px-6 py-2 rounded font-semibold hover:bg-yellow-400 transition"
-      >
+      <input type="text" id="reviewerName" placeholder="Your Name" required class="w-full p-3 rounded" />
+      <textarea id="reviewText" placeholder="Your Review" rows="3" required class="w-full p-3 rounded"></textarea>
+      <button type="submit" class="bg-yellow-500 text-black px-6 py-2 rounded font-semibold hover:bg-yellow-400 transition">
         <span class="lang-en">Add Review</span>
         <span class="lang-ru hidden">Добави Отзив</span>
       </button>
     </form>
   </section>
 
-  <!-- Contact Section -->
+  <!-- Contact -->
   <section class="bg-gray-900 py-16 px-6 text-yellow-400">
     <div class="max-w-4xl mx-auto">
       <h2 class="text-3xl font-semibold mb-6 lang-en">Contact Us</h2>
       <h2 class="text-3xl font-semibold mb-6 lang-ru hidden">Свържете се с нас</h2>
-
       <p class="mb-2 lang-en">📞 Phone: +359 887 594 996</p>
       <p class="mb-2 lang-ru hidden">📞 Телефон: +359 887 594 996</p>
-
       <p class="mb-2 lang-en">📧 Email: stanislav_stoianov73@abv.bg</p>
       <p class="mb-2 lang-ru hidden">📧 Имейл: stanislav_stoianov73@abv.bg</p>
-
       <p class="mb-6 lang-en">🕐 Working Hours: 24/7, Monday–Sunday</p>
       <p class="mb-6 lang-ru hidden">🕐 Работно време: 24/7, понеделник–неделя</p>
     </div>
@@ -151,6 +103,7 @@
     <p>© 2025 BurgasTransTaxi. All rights reserved.</p>
   </footer>
 
+  <!-- JavaScript -->
   <script>
     // Language toggle
     const enFlag = document.getElementById('enFlag');
@@ -183,15 +136,11 @@
       e.preventDefault();
       const name = document.getElementById('reviewerName').value.trim();
       const text = document.getElementById('reviewText').value.trim();
-
       if (!name || !text) return;
-
       const blockquote = document.createElement('blockquote');
       blockquote.classList.add('border-l-4', 'border-yellow-500', 'pl-4', 'italic', 'mt-4');
       blockquote.innerHTML = `“${text}” <br /><strong>${name}</strong>`;
-
       reviewsList.appendChild(blockquote);
-
       reviewForm.reset();
     });
   </script>
