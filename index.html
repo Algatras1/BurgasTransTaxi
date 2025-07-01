@@ -38,6 +38,24 @@
       display: none;
     }
   }
+.route-line {
+  height: 4px;
+  width: 100%;
+  background: repeating-linear-gradient(
+    to right,
+    #D4AF37 0px,
+    #D4AF37 10px,
+    transparent 10px,
+    transparent 20px
+  );
+  animation: moveRoute 2s linear infinite;
+  margin: 60px 0;
+}
+
+@keyframes moveRoute {
+  0% { background-position: 0 0; }
+  100% { background-position: 40px 0; }
+}
 </style>
 </head>
 <body>
