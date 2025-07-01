@@ -1,127 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>BurgasTransTaxi</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto&display=swap" rel="stylesheet" />
   <style>
     body {
       font-family: 'Roboto', sans-serif;
-      background: #000 url('images/overlay.png') center/cover no-repeat;
+      background: #000;
       color: #fff;
-      position: relative;
-      overflow-x: hidden;
     }
-    h1,h2 { font-family: 'Playfair Display', serif; color: #D4AF37; }
-    .floating-car { position: fixed; right: 40px; top: 150px; width: 280px; z-index:10; }
-    @media(max-width:1024px){ .floating-car{ display:none; } }
-
-    /* Interactive background parallax */
-    #bg {
-      position: fixed; top:0; left:0;
-      width:200%; height:200%;
-      background: url('images/bg-pattern.png') repeat;
-      transform: translate(-25%, -25%);
-      pointer-events: none;
-      z-index: -1;
+    h1, h2 {
+      font-family: 'Playfair Display', serif;
+      color: #D4AF37;
+    }
+    .floating-car {
+      position: fixed;
+      right: 40px;
+      top: 150px;
+      width: 280px;
+      z-index: 10;
+    }
+    @media(max-width:1024px){
+      .floating-car { display: none; }
     }
   </style>
 </head>
 <body>
 
-  <div id="bg"></div>
-
+  <!-- Floating Image -->
   <div class="floating-car hidden lg:block">
-    <img src="images/zafira.jpg" alt="Opel Zafira" class="rounded-lg shadow-lg w-full"/>
+    <img src="images/zafira.jpg" alt="Opel Zafira" class="rounded-lg shadow-lg w-full" />
     <p class="text-sm text-gray-400 italic text-right mt-2">Opel Zafira 2018 – 7 seats</p>
   </div>
 
-  <header class="bg-black/80 py-4 fixed inset-x-0 top-0 z-20">
-    <nav class="max-w-4xl mx-auto px-6 flex justify-between items-center">
-      <h1 class="text-xl font-bold">BurgasTransTaxi</h1>
-      <div class="space-x-4 text-yellow-300">
-        <a href="#services" class="hover:underline">Services</a>
-        <a href="#prices" class="hover:underline">Prices</a>
-        <a href="#contact" class="hover:underline">Contact</a>
-      </div>
-    </nav>
-  </header>
+  <!-- Hero Section -->
+  <section class="max-w-4xl mx-auto text-center py-20 px-6">
+    <h1 class="text-5xl font-bold mb-6">Reliable Taxi Transfers</h1>
+    <p class="text-lg text-white/80">Airport – City – Intercity</p>
+    <a href="#booking" class="inline-block mt-6 bg-yellow-500 hover:bg-yellow-400 text-black font-bold py-3 px-6 rounded">Book Now</a>
+    <p class="mt-6 text-white/70">For pricing, please contact us directly.</p>
+  </section>
 
-  <main class="pt-24">
+  <!-- Booking Section -->
+  <section id="booking" class="max-w-4xl mx-auto px-6 py-16">
+    <h2 class="text-3xl font-semibold mb-6">Quick Booking</h2>
+    <form class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <input type="text" placeholder="Name" class="p-3 rounded border border-yellow-400 bg-transparent text-yellow-300 placeholder-yellow-400" />
+      <input type="tel" placeholder="Phone Number" class="p-3 rounded border border-yellow-400 bg-transparent text-yellow-300 placeholder-yellow-400" />
+      <input type="text" placeholder="Pickup Location" class="p-3 rounded border border-yellow-400 bg-transparent text-yellow-300 placeholder-yellow-400" />
+      <input type="text" placeholder="Drop-off Location" class="p-3 rounded border border-yellow-400 bg-transparent text-yellow-300 placeholder-yellow-400" />
+      <input type="datetime-local" class="p-3 rounded border border-yellow-400 bg-transparent text-yellow-300" />
+      <button type="submit" class="col-span-full bg-yellow-500 text-black font-bold py-3 rounded hover:bg-yellow-400">Send Booking Request</button>
+    </form>
+  </section>
 
-    <section id="hero" class="text-center py-20 px-6">
-      <h1 class="text-5xl font-bold mb-6">Reliable Taxi & Airport Transfers</h1>
-      <p class="text-lg text-white/80">Fixed rates • 24/7 • 4‑ to 8‑seaters</p>
-      <a href="#booking" class="inline-block mt-6 bg-yellow-500 hover:bg-yellow-400 text-black font-bold py-3 px-6 rounded transition">Book Now</a>
-    </section>
+  <!-- Reviews Section -->
+  <section class="max-w-4xl mx-auto px-6 py-12 border-t border-yellow-600">
+    <h2 class="text-3xl font-semibold mb-6">Customer Reviews</h2>
+    <blockquote class="border-l-4 border-yellow-400 pl-6 italic text-yellow-200">
+      “Punctual and professional service – very satisfied!”<br>
+      <footer class="mt-2 font-semibold text-yellow-300">– Alex G.</footer>
+    </blockquote>
+  </section>
 
-    <section id="prices" class="max-w-4xl mx-auto px-6 py-12 bg-gray-900 rounded-lg shadow-lg text-yellow-400">
-      <h2 class="text-3xl font-semibold mb-6">Our Rates</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="bg-black/50 p-6 rounded">
-          <h3 class="text-xl font-bold mb-2">Car (4 pax)</h3>
-          <p class="text-2xl">30 BGN</p>
-        </div>
-        <div class="bg-black/50 p-6 rounded">
-          <h3 class="text-xl font-bold mb-2">Minivan (6 pax)</h3>
-          <p class="text-2xl">40 BGN</p>
-        </div>
-        <div class="bg-black/50 p-6 rounded">
-          <h3 class="text-xl font-bold mb-2">Van (8 pax)</h3>
-          <p class="text-2xl">50 BGN</p>
-        </div>
-      </div>
-    </section>
+  <!-- Contact Section -->
+  <section class="bg-gray-900 px-6 py-12 max-w-4xl mx-auto text-yellow-400">
+    <h2 class="text-3xl font-semibold mb-6">Contact Us</h2>
+    <p class="mb-2">📞 +359 887 594 996</p>
+    <p class="mb-2">📧 stanislav_stoianov73@abv.bg</p>
+    <p>🕐 Available 24/7</p>
+  </section>
 
-    <section id="booking" class="max-w-4xl mx-auto px-6 py-16">
-      <h2 class="text-3xl font-semibold mb-6">Quick Booking</h2>
-      <form class="bg-gray-900 p-8 rounded-lg shadow-lg grid grid-cols-1 md:grid-cols-2 gap-6">
-        <input type="text" placeholder="Name" required class="p-3 rounded border border-yellow-400 bg-transparent text-yellow-300 placeholder-yellow-400"/>
-        <input type="tel" placeholder="Phone" required class="p-3 rounded border border-yellow-400 bg-transparent text-yellow-300 placeholder-yellow-400"/>
-        <input type="text" placeholder="Pick‑up Address" required class="p-3 rounded border border-yellow-400 bg-transparent text-yellow-300 placeholder-yellow-400"/>
-        <input type="text" placeholder="Destination" required class="p-3 rounded border border-yellow-400 bg-transparent text-yellow-300 placeholder-yellow-400"/>
-        <input type="datetime-local" required class="p-3 rounded border border-yellow-400 bg-transparent text-yellow-300"/>
-        <button type="submit" class="col-span-full bg-yellow-500 text-black font-bold py-3 rounded hover:bg-yellow-400 transition">Send Request</button>
-      </form>
-    </section>
+  <!-- App Buttons -->
+  <section class="bg-black px-6 py-12 max-w-4xl mx-auto text-yellow-400">
+    <h2 class="text-2xl font-semibold mb-4">Contact via Apps</h2>
+    <div class="flex flex-col md:flex-row gap-4 md:gap-8">
+      <a href="https://wa.me/359887594996" target="_blank" class="flex items-center space-x-2 bg-black border border-green-500 hover:bg-green-500 hover:text-black text-green-500 font-bold px-5 py-3 rounded transition">
+        <img src="images/whatsapp.svg" alt="WhatsApp" class="h-6 w-6" />
+        <span>WhatsApp</span>
+      </a>
+      <a href="viber://chat?number=%2B359887594996" class="flex items-center space-x-2 bg-black border border-purple-600 hover:bg-purple-600 hover:text-black text-purple-600 font-bold px-5 py-3 rounded transition">
+        <img src="images/viber.png" alt="Viber" class="h-6 w-6" />
+        <span>Viber</span>
+      </a>
+    </div>
+  </section>
 
-    <section class="max-w-4xl mx-auto px-6 py-12 border-t border-yellow-600">
-      <h2 class="text-3xl font-semibold mb-6">What People Say</h2>
-      <blockquote class="border-l-4 border-yellow-400 pl-6 italic text-yellow-200">
-        “Punctual, fair rates and comfortable ride. Highly recommended!”<br><footer class="mt-2 font-semibold text-yellow-300">Maria P.</footer>
-      </blockquote>
-    </section>
-
-    <section id="contact" class="bg-gray-900 px-6 py-12 max-w-4xl mx-auto text-yellow-400 rounded-lg shadow-lg">
-      <h2 class="text-3xl font-semibold mb-6">Contact & Connect</h2>
-      <p class="mb-2">📞 +359 887 594 996 (WhatsApp & Viber)</p>
-      <p class="mb-2">📧 stanislav_stoianov73@abv.bg</p>
-      <div class="flex flex-col md:flex-row gap-4 mt-4">
-        <a href="https://wa.me/359887594996" target="_blank" class="flex items-center space-x-2 bg-black border border-green-500 hover:bg-green-500 hover:text-black text-green-500 font-bold px-5 py-3 rounded transition">
-          <img src="images/whatsapp.svg" alt="WhatsApp" class="h-6 w-6"/> <span>WhatsApp</span>
-        </a>
-        <a href="viber://chat?number=%2B359887594996" class="flex items-center space-x-2 bg-black border border-purple-600 hover:bg-purple-600 hover:text-black text-purple-600 font-bold px-5 py-3 rounded transition">
-          <img src="images/viber.png" alt="Viber" class="h-6 w-6"/> <span>Viber</span>
-        </a>
-      </div>
-    </section>
-
-    <footer class="text-center text-yellow-400 py-6 border-t border-yellow-600 mt-12 text-sm">
-      <p>&copy; 2025 BurgasTransTaxi. All rights reserved.</p>
-      <p class="mt-2"><a href="#" class="underline hover:text-yellow-300">Privacy Policy</a> | <a href="#" class="underline hover:text-yellow-300">Terms & Conditions</a></p>
-    </footer>
-
-  </main>
-
-  <script>
-    document.addEventListener('mousemove', e => {
-      const bg = document.getElementById('bg');
-      const x = (e.clientX / window.innerWidth) * 20;
-      const y = (e.clientY / window.innerHeight) * 20;
-      bg.style.transform = `translate(${-25 + x}%, ${-25 + y}%)`;
-    });
-  </script>
+  <!-- Footer -->
+  <footer class="text-center text-yellow-400 py-6 border-t border-yellow-600 mt-12 text-sm">
+    <p>&copy; 2025 BurgasTransTaxi. All rights reserved.</p>
+    <p class="mt-2">
+      <a href="#" class="underline hover:text-yellow-300">Privacy Policy</a> |
+      <a href="#" class="underline hover:text-yellow-300">Terms & Conditions</a>
+    </p>
+  </footer>
 
 </body>
 </html>
