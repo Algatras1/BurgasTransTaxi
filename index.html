@@ -2,143 +2,71 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BurgasTransTaxi</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto&display=swap" rel="stylesheet" />
   <style>
-    body { font-family: 'Roboto', sans-serif; background-color: #000; }
-    h1, h2, h3 { font-family: 'Playfair Display', serif; }
-    /* Make image blend with background */
-    .car-image {
-      background-color: black;
-      padding: 20px;
-      border-radius: 10px;
-      max-width: 100%;
-      height: auto;
-      display: block;
-      margin: 0 auto;
-      filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.3));
-    }
-    .lang-flag {
-      width: 28px;
-      height: 20px;
-      border-radius: 3px;
-      cursor: pointer;
-    }
-    .icon-link {
-      width: 28px;
-      height: 28px;
-      cursor: pointer;
-      margin-left: 12px;
-    }
+    body { font-family: 'Roboto', sans-serif; background-color: #000; color: #fff; }
+    h1, h2 { font-family: 'Playfair Display', serif; color: #D4AF37; }
+    .floating-car { position: fixed; right: 40px; top: 150px; width: 280px; z-index: 10; }
+    @media (max-width: 1024px) { .floating-car { display: none; } }
   </style>
 </head>
-<body class="text-white">
-  <!-- Header -->
-  <header class="flex justify-between items-center p-6 max-w-6xl mx-auto">
-    <div class="text-yellow-400 font-bold text-xl flex items-center space-x-2">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M3 10h4l3 7 4-14 3 7h4" />
-      </svg>
-      <span>BurgasTransTaxi</span>
-    </div>
-    <nav class="space-x-6 text-yellow-400 font-semibold">
-      <a href="#" class="hover:underline">Home</a>
-      <a href="#" class="hover:underline">Services</a>
-      <a href="#" class="hover:underline">Booking</a>
-      <a href="#" class="hover:underline">Contact</a>
-    </nav>
-    <div class="flex items-center space-x-3 text-yellow-400">
-      <span class="select-none cursor-default">EN</span>
-      <!-- Russian Flag -->
-      <img src="https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_Russia.svg" alt="Russian" class="lang-flag" />
-      <!-- Bulgarian Flag -->
-      <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Bulgaria.svg" alt="Bulgarian" class="lang-flag" />
-    </div>
-  </header>
+<body>
+  <div class="floating-car hidden lg:block">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/7/7f/Opel_Zafira_C_1.6_120_PS_2009_02.JPG" alt="Opel Zafira" class="rounded-lg shadow-lg w-full" />
+    <p class="text-sm text-gray-400 italic text-right mt-2">Opel Zafira 2018 - 7 seats</p>
+  </div>
 
-  <!-- Hero Section -->
-  <section class="text-center py-20 bg-gradient-to-b from-black to-gray-900 max-w-6xl mx-auto px-6">
-    <h1 class="text-4xl md:text-6xl font-bold text-yellow-400">Reliable Taxi Transfers</h1>
-    <p class="mt-4 text-lg text-white/80">Airport – City – Intercity</p>
-    <a href="mailto:nikolai_stoianov66@abv.bg?subject=Taxi%20Booking%20Request" target="_blank" class="inline-block mt-8 bg-yellow-500 hover:bg-yellow-400 text-black font-bold py-3 px-8 rounded transition">
-      Book Now
-    </a>
-
-    <p class="mt-6 text-white/80">For prices, please refer to our contacts.</p>
-
-    <div class="mt-12 max-w-lg mx-auto">
-      <img
-        src="/HD-wallpaper-opel-zafira-2018-cars-compact-vans-new-zafira-opel.jpg"
-        alt="Opel Zafira 2018"
-        class="car-image"
-      />
-      <p class="mt-2 text-gray-400 italic text-right">Opel Zafira 2018 - 7 seats</p>
-    </div>
+  <section class="max-w-4xl mx-auto text-center py-20 px-6">
+    <h1 class="text-5xl font-bold mb-6">Reliable Taxi Transfers</h1>
+    <p class="text-lg text-white/80">Airport – City – Intercity</p>
+    <button class="mt-6 bg-yellow-500 hover:bg-yellow-400 text-black font-bold py-3 px-6 rounded">Book Now</button>
+    <p class="mt-6 text-white/70">For prices, please refer to our contacts.</p>
   </section>
 
-  <!-- Quick Booking -->
-  <section class="max-w-6xl mx-auto px-6 py-12">
-    <h2 class="text-yellow-400 text-2xl font-semibold mb-6">Quick Booking</h2>
+  <section class="max-w-4xl mx-auto px-6 py-16">
+    <h2 class="text-3xl font-semibold mb-6">Quick Booking</h2>
     <form class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <input class="p-3 rounded border border-yellow-400 bg-transparent placeholder-yellow-400 text-yellow-300" type="text" placeholder="Name" />
-      <input class="p-3 rounded border border-yellow-400 bg-transparent placeholder-yellow-400 text-yellow-300" type="text" placeholder="Pickup Location" />
-      <input class="p-3 rounded border border-yellow-400 bg-transparent placeholder-yellow-400 text-yellow-300" type="text" placeholder="Drop-off Location" />
-      <input class="p-3 rounded border border-yellow-400 bg-transparent placeholder-yellow-400 text-yellow-300" type="datetime-local" />
-      <button type="submit" class="col-span-full bg-yellow-500 hover:bg-yellow-400 text-black font-bold py-3 rounded transition">Send</button>
+      <input type="text" placeholder="Name" class="p-3 rounded border border-yellow-400 bg-transparent text-yellow-300 placeholder-yellow-400" />
+      <input type="text" placeholder="Pickup Location" class="p-3 rounded border border-yellow-400 bg-transparent text-yellow-300 placeholder-yellow-400" />
+      <input type="text" placeholder="Drop-off Location" class="p-3 rounded border border-yellow-400 bg-transparent text-yellow-300 placeholder-yellow-400" />
+      <input type="datetime-local" class="p-3 rounded border border-yellow-400 bg-transparent text-yellow-300" />
+      <button type="submit" class="col-span-full bg-yellow-500 text-black font-bold py-3 rounded hover:bg-yellow-400">Send</button>
     </form>
   </section>
 
-  <!-- Customer Reviews -->
-  <section class="max-w-6xl mx-auto px-6 py-12 border-t border-yellow-600">
-    <h2 class="text-yellow-400 text-2xl font-semibold mb-6">Customer Reviews</h2>
-    <blockquote class="border-l-4 border-yellow-400 pl-6 italic text-yellow-200 max-w-3xl mx-auto">
+  <section class="max-w-4xl mx-auto px-6 py-12 border-t border-yellow-600">
+    <h2 class="text-3xl font-semibold mb-6">Customer Reviews</h2>
+    <blockquote class="border-l-4 border-yellow-400 pl-6 italic text-yellow-200">
       “Professional and punctual. 10/10”<br/>
       <footer class="mt-2 font-semibold text-yellow-300">Ivan S.</footer>
     </blockquote>
   </section>
 
-  <!-- Contact Section -->
-  <section class="bg-gray-900 max-w-6xl mx-auto px-6 py-12 flex flex-col md:flex-row justify-between items-center gap-8">
-    <div>
-      <h2 class="text-yellow-400 text-2xl font-semibold mb-6">Contact Us</h2>
-      <p class="text-yellow-300 mb-1 flex items-center space-x-2">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2v-5a2 2 0 00-2-2H5a2 2 0 00-2 2v5a2 2 0 002 2z" />
-        </svg>
-        <span>stanislav_stoianov73@abv.bg</span>
-      </p>
-      <p class="text-yellow-300 mb-1 flex items-center space-x-2">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="M3 10h1l2 3h8l2-3h1M5 18h14v-1a4 4 0 00-14 0v1z" />
-        </svg>
-        <span>+359 887 594 996</span>
-      </p>
-      <p class="text-yellow-300 mb-4">24/7 Monday – Sunday</p>
+  <section class="bg-gray-900 px-6 py-12 max-w-4xl mx-auto text-yellow-400">
+    <h2 class="text-3xl font-semibold mb-6">Contact Us</h2>
+    <p class="mb-2">📞 +359 887 594 996</p>
+    <p class="mb-2">📧 stanislav_stoianov73@abv.bg</p>
+    <p>🕐 24/7 – Monday to Sunday</p>
+  </section>
 
-      <!-- Viber & WhatsApp -->
-      <div class="flex space-x-6">
-        <a href="viber://chat?number=%2B359887594996" target="_blank" rel="noopener noreferrer" title="Chat on Viber">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/0/01/Viber_logo.png" alt="Viber" class="icon-link" />
-        </a>
-        <a href="https://wa.me/359887594996" target="_blank" rel="noopener noreferrer" title="Chat on WhatsApp">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="icon-link" />
-        </a>
-      </div>
+  <section class="bg-black px-6 py-12 max-w-4xl mx-auto text-yellow-400">
+    <h2 class="text-2xl font-semibold mb-4">Contact via Apps</h2>
+    <div class="flex flex-col md:flex-row gap-4 md:gap-8">
+      <a href="https://wa.me/359887594996" target="_blank" class="flex items-center space-x-2 bg-green-500 hover:bg-green-400 text-black font-bold px-5 py-3 rounded transition">
+        <span>📱</span><span>WhatsApp</span>
+      </a>
+      <a href="viber://chat?number=%2B359887594996" class="flex items-center space-x-2 bg-purple-600 hover:bg-purple-500 text-white font-bold px-5 py-3 rounded transition">
+        <span>💬</span><span>Viber</span>
+      </a>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="text-center text-yellow-400 py-6 border-t border-yellow-600 mt-12">
+  <footer class="text-center text-yellow-400 py-6 border-t border-yellow-600 mt-12 text-sm">
     <p>&copy; 2025 BurgasTransTaxi. All rights reserved.</p>
-    <p class="mt-1">
-      <a href="#" class="underline hover:text-yellow-300">Privacy Policy</a> | <a href="#" class="underline hover:text-yellow-300">Terms & Conditions</a>
-    </p>
+    <p class="mt-2"><a href="#" class="underline hover:text-yellow-300">Privacy Policy</a> | <a href="#" class="underline hover:text-yellow-300">Terms & Conditions</a></p>
   </footer>
 </body>
 </html>
