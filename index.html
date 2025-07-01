@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>BurgasTransTaxi</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -13,38 +13,116 @@
     h1, h2, h3 { font-family: 'Playfair Display', serif; }
   </style>
 </head>
-<body class="bg-black text-white">
-  <!-- Hero Section -->
-  <section class="text-center py-20 bg-gradient-to-b from-black to-gray-900">
-    <h1 class="text-4xl md:text-6xl font-bold text-yellow-400">Welcome to BurgasTransTaxi</h1>
-    <p class="mt-4 text-lg">For prices, please refer to our contacts.</p>
+<body class="bg-black text-white min-h-screen flex flex-col">
+  <!-- Header -->
+  <header class="flex justify-between items-center px-8 py-4 border-b border-yellow-600">
+    <div class="flex items-center space-x-3">
+      <!-- Logo placeholder -->
+      <div class="w-10 h-10 bg-yellow-600 rounded flex items-center justify-center text-black font-bold text-xl">
+        🚖
+      </div>
+      <span class="text-yellow-500 text-xl font-semibold tracking-wide">BURGASTRANSTAXI</span>
+    </div>
+    <nav class="hidden md:flex space-x-10 text-yellow-400 font-semibold tracking-wide text-lg">
+      <a href="#" class="hover:text-yellow-600">HOME</a>
+      <a href="#" class="hover:text-yellow-600">SERVICES</a>
+      <a href="#" class="hover:text-yellow-600">BOOKING</a>
+      <a href="#" class="hover:text-yellow-600">CONTACT</a>
+    </nav>
+    <div class="flex space-x-2 items-center text-yellow-400 font-semibold cursor-pointer">
+      <span>EN</span>
+      <img src="https://flagcdn.com/w20/bg.png" alt="BG" class="w-5 h-3 rounded-sm border border-yellow-600" />
+      <img src="https://flagcdn.com/w20/ru.png" alt="RU" class="w-5 h-3 rounded-sm border border-yellow-600" />
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="flex flex-col md:flex-row items-center justify-between px-8 py-14 max-w-7xl mx-auto w-full">
+    <div class="max-w-lg text-white mb-10 md:mb-0">
+      <h1 class="text-5xl font-bold mb-6 tracking-wide">
+        RELIABLE TAXI<br />TRANSFERS
+      </h1>
+      <p class="text-lg mb-6">AIRPORT – CITY – INTERCITY</p>
+      <button class="bg-yellow-600 hover:bg-yellow-500 text-black font-semibold px-8 py-3 rounded transition">
+        BOOK NOW
+      </button>
+      <p class="mt-6 text-sm text-gray-300">For prices, please refer to our contacts.</p>
+    </div>
+    <div>
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Opel_Zafira_B_2005_2011_front_20100117.jpg"
+        alt="Opel Zafira 2018"
+        class="w-72 rounded shadow-lg"
+      />
+      <p class="mt-2 text-gray-400 text-right italic">Opel Zafira 2018 - 7 seats</p>
+    </div>
   </section>
 
-  <!-- About Section -->
-  <section class="max-w-5xl mx-auto px-6 py-16">
-    <h2 class="text-3xl font-semibold text-yellow-400 mb-6">About Us</h2>
-    <p class="text-gray-300">We provide premium taxi services in Burgas and across the country. Our drivers are professional, punctual, and dedicated to making your journey safe and comfortable.</p>
+  <!-- Quick Booking -->
+  <section class="max-w-4xl mx-auto px-8 py-10 w-full">
+    <h2 class="text-yellow-500 text-2xl font-semibold mb-6">QUICK BOOKING</h2>
+    <form class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <input
+        type="text"
+        placeholder="Name"
+        class="p-3 rounded border border-yellow-500 bg-transparent text-yellow-400 placeholder-yellow-400 focus:outline-none focus:ring-2 focus:ring-yellow-500"
+      />
+      <input
+        type="text"
+        placeholder="Pickup Location"
+        class="p-3 rounded border border-yellow-500 bg-transparent text-yellow-400 placeholder-yellow-400 focus:outline-none focus:ring-2 focus:ring-yellow-500"
+      />
+      <input
+        type="text"
+        placeholder="Drop-off Location"
+        class="p-3 rounded border border-yellow-500 bg-transparent text-yellow-400 placeholder-yellow-400 focus:outline-none focus:ring-2 focus:ring-yellow-500"
+      />
+      <input
+        type="datetime-local"
+        placeholder="Date & Time"
+        class="p-3 rounded border border-yellow-500 bg-transparent text-yellow-400 placeholder-yellow-400 focus:outline-none focus:ring-2 focus:ring-yellow-500"
+      />
+      <button
+        type="submit"
+        class="col-span-full bg-yellow-600 hover:bg-yellow-500 text-black font-semibold rounded px-6 py-3 transition"
+      >
+        SEND
+      </button>
+    </form>
   </section>
 
-  <!-- Contact Section -->
-  <section class="bg-gray-800 py-16 px-6">
-    <div class="max-w-4xl mx-auto">
-      <h2 class="text-3xl font-semibold text-yellow-400 mb-6">Contact Us</h2>
-      <p class="text-gray-200 mb-2">📞 Phone: +359 887 594 996</p>
-      <p class="text-gray-200 mb-2">📧 Email: stanislav73@abv.bg</p>
-      <p class="text-gray-200 mb-6">🕐 Working Hours: 24/7, Monday–Sunday</p>
-      <form class="space-y-4">
-        <input class="w-full p-3 rounded bg-gray-700 text-white placeholder-gray-400" type="text" placeholder="Your Name" />
-        <input class="w-full p-3 rounded bg-gray-700 text-white placeholder-gray-400" type="email" placeholder="Your Email" />
-        <textarea class="w-full p-3 rounded bg-gray-700 text-white placeholder-gray-400" rows="5" placeholder="Your Message"></textarea>
-        <button class="bg-yellow-500 text-black px-6 py-2 rounded font-semibold hover:bg-yellow-400 transition">Send</button>
-      </form>
+  <!-- Customer Reviews -->
+  <section class="max-w-4xl mx-auto px-8 py-6 border-t border-yellow-700 w-full">
+    <h2 class="text-yellow-500 text-2xl font-semibold mb-4">CUSTOMER REVIEWS</h2>
+    <blockquote class="italic text-yellow-400 max-w-xl">
+      “Professional and punctual. 10/10”.<br />
+      <span class="not-italic font-semibold">Ivan S.</span>
+    </blockquote>
+  </section>
+
+  <!-- Contact Info -->
+  <section
+    class="max-w-4xl mx-auto px-8 py-10 border-t border-yellow-700 text-yellow-400 text-center space-y-4 w-full"
+  >
+    <div class="text-xl font-semibold">24/7 MONDAY - SUNDAY</div>
+    <div class="flex justify-center items-center space-x-6">
+      <div class="flex items-center space-x-2">
+        <svg class="w-5 h-5 fill-yellow-400" viewBox="0 0 24 24"><path d="M21 16.5a2.25 2.25 0 01-2.25 2.25h-13.5a2.25 2.25 0 01-2.25-2.25V7.5h18v9z"/></svg>
+        <span>+359 887 594 996</span>
+      </div>
+      <div class="flex items-center space-x-2">
+        <svg class="w-5 h-5 fill-yellow-400" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4S14.21 4 12 4s-4 1.79-4 4 1.79 4 4 4z"/><path d="M20 20v-2a4 4 0 00-8 0v2h8z"/></svg>
+        <span>stanislav73@abv.bg</span>
+      </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="text-center text-gray-500 text-sm py-6 border-t border-gray-700">
-    <p>&copy; 2025 BurgasTransTaxi. All rights reserved.</p>
+  <footer
+    class="mt-auto py-6 px-8 border-t border-yellow-700 text-yellow-400 text-sm flex justify-between"
+  >
+    <a href="#" class="hover:text-yellow-500">Privacy Policy</a>
+    <a href="#" class="hover:text-yellow-500">Terms & Conditions</a>
   </footer>
 </body>
 </html>
