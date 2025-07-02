@@ -562,6 +562,46 @@
   // Keep language toggle from previous parts working
   // If not already included, add language toggle JS here or ensure it’s included site-wide
 </script>
+<!-- Language Switcher Buttons -->
+<div class="flex justify-end p-4 space-x-4">
+  <button class="lang-btn text-yellow-400 font-bold" data-lang="en">EN</button>
+  <button class="lang-btn text-yellow-400 font-bold" data-lang="bg">BG</button>
+  <button class="lang-btn text-yellow-400 font-bold" data-lang="ru">RU</button>
+</div>
 
+<!-- Example content with language classes -->
+<h1 class="lang en">Reliable Taxi Transfers</h1>
+<h1 class="lang bg hidden">Надежден Такси Трансфер</h1>
+<h1 class="lang ru hidden">Надёжные Такси Трансферы</h1>
+
+<p class="lang en">Airport – City – Intercity</p>
+<p class="lang bg hidden">Летище – Град – Междуградски</p>
+<p class="lang ru hidden">Аэропорт – Город – Междугородние</p>
+
+<!-- Repeat this pattern for all textual content -->
+
+<script>
+  const langButtons = document.querySelectorAll('.lang-btn');
+  const allLangElems = document.querySelectorAll('.lang');
+
+  function setLanguage(lang) {
+    allLangElems.forEach(el => {
+      el.classList.toggle('hidden', !el.classList.contains(lang));
+    });
+  }
+
+  langButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      setLanguage(btn.dataset.lang);
+      // Optional: highlight active button
+      langButtons.forEach(b => b.classList.remove('underline'));
+      btn.classList.add('underline');
+    });
+  });
+
+  // Initialize default language
+  setLanguage('en');
+  langButtons[0].classList.add('underline');
+</script>
 
 
