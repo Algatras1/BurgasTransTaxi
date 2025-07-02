@@ -1,17 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>BurgasTransTaxi</title>
+  <title>BurgasTransTaxi — Premium Taxi Services</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto&display=swap" rel="stylesheet" />
   <style>
     body {
       font-family: 'Roboto', sans-serif;
       background-color: #000;
       color: #fff;
-      margin: 0;
-      padding: 0;
       overflow-x: hidden;
     }
     h1, h2, h3 {
@@ -25,7 +24,7 @@
       width: 280px;
       z-index: 10;
     }
-    @media (max-width: 1024px) {
+    @media(max-width:1024px) {
       .floating-car {
         display: none;
       }
@@ -40,7 +39,7 @@
 </head>
 <body>
 
-  <!-- Language Switcher -->
+  <!-- Language Toggle -->
   <div class="flex justify-end gap-4 p-4 bg-black border-b border-yellow-600 text-yellow-400 font-semibold cursor-pointer">
     <span id="enBtn" class="underline">EN</span>
     <span id="bgBtn" class="opacity-60 hover:opacity-100">BG</span>
@@ -52,9 +51,9 @@
     <p class="text-sm text-gray-400 italic text-right mt-2">Opel Zafira 2018 - 7 seats</p>
   </div>
 
-  <main class="max-w-5xl mx-auto px-6 py-12">
+  <main class="max-w-6xl mx-auto px-6 py-12">
 
-    <!-- Hero -->
+    <!-- Hero Section -->
     <section>
       <h1 class="text-5xl font-bold mb-4 lang en active">Reliable Taxi Transfers</h1>
       <h1 class="text-5xl font-bold mb-4 lang bg">Надежден Такси Трансфер</h1>
@@ -66,43 +65,141 @@
       <p class="mt-6 text-white/70 lang bg">За цени, моля свържете се с нас.</p>
     </section>
 
-    <!-- Booking -->
-    <section id="booking" class="mt-16">
-      <h2 class="text-3xl font-semibold mb-6 lang en active">Quick Booking</h2>
-      <h2 class="text-3xl font-semibold mb-6 lang bg">Бърза Резервация</h2>
-      <form class="grid grid-cols-1 md:grid-cols-2 gap-6 bg-gray-900 p-8 rounded-lg shadow-lg text-yellow-400">
-        <input type="text" placeholder="Name / Име" required class="p-3 rounded border border-yellow-400 bg-transparent placeholder-yellow-400 text-yellow-300" />
-        <input type="tel" placeholder="Phone / Телефон" required class="p-3 rounded border border-yellow-400 bg-transparent placeholder-yellow-400 text-yellow-300" />
-        <input type="text" placeholder="Pickup Location / От" required class="p-3 rounded border border-yellow-400 bg-transparent placeholder-yellow-400 text-yellow-300" />
-        <input type="text" placeholder="Drop-off Location / До" required class="p-3 rounded border border-yellow-400 bg-transparent placeholder-yellow-400 text-yellow-300" />
-        <input type="datetime-local" required class="p-3 rounded border border-yellow-400 bg-transparent placeholder-yellow-400 text-yellow-300" />
-        <button type="submit" class="col-span-full bg-yellow-500 text-black font-semibold py-3 rounded hover:bg-yellow-400 transition lang en active">Send Booking Request</button>
-        <button type="submit" class="col-span-full bg-yellow-500 text-black font-semibold py-3 rounded hover:bg-yellow-400 transition lang bg">Изпрати заявка</button>
+    <!-- About Us -->
+    <section class="mt-20">
+      <h2 class="text-4xl font-semibold mb-6 lang en active">About BurgasTransTaxi</h2>
+      <h2 class="text-4xl font-semibold mb-6 lang bg">За BurgasTransTaxi</h2>
+      <p class="text-yellow-300 leading-relaxed lang en active">
+        BurgasTransTaxi offers premium, reliable taxi services around Burgas and beyond. Our professional drivers ensure your comfort and safety with 24/7 availability.
+      </p>
+      <p class="text-yellow-300 leading-relaxed lang bg">
+        BurgasTransTaxi предлага първокласни, надеждни таксиметрови услуги в Бургас и извън него. Нашите професионални шофьори гарантират комфорт и безопасност денонощно.
+      </p>
+    </section>
+
+    <!-- Services -->
+    <section class="mt-20">
+      <h2 class="text-4xl font-semibold mb-6 lang en active">Our Services</h2>
+      <h2 class="text-4xl font-semibold mb-6 lang bg">Нашите услуги</h2>
+      <ul class="list-disc list-inside space-y-2 text-yellow-400 lang en active">
+        <li>Airport transfers</li>
+        <li>City taxi rides</li>
+        <li>Intercity travel</li>
+        <li>Group bookings & VIP service</li>
+        <li>Hourly taxi rentals</li>
+      </ul>
+      <ul class="list-disc list-inside space-y-2 text-yellow-400 lang bg">
+        <li>Трансфери до летището</li>
+        <li>Таксиметрови услуги в града</li>
+        <li>Междуградски превози</li>
+        <li>Групови резервации и VIP обслужване</li>
+        <li>Таксиметров наем на час</li>
+      </ul>
+    </section>
+
+    <!-- Booking Form -->
+    <section id="booking" class="mt-20 bg-gray-900 p-10 rounded-lg shadow-lg lang en active">
+      <h2 class="text-3xl font-semibold mb-6">Quick Booking</h2>
+      <form class="grid grid-cols-1 md:grid-cols-2 gap-6 text-yellow-400">
+        <input type="text" placeholder="Name" class="p-3 rounded border border-yellow-400 bg-transparent placeholder-yellow-400 text-yellow-300" required />
+        <input type="tel" placeholder="Phone Number" class="p-3 rounded border border-yellow-400 bg-transparent placeholder-yellow-400 text-yellow-300" required />
+        <input type="text" placeholder="Pickup Location" class="p-3 rounded border border-yellow-400 bg-transparent placeholder-yellow-400 text-yellow-300" required />
+        <input type="text" placeholder="Drop-off Location" class="p-3 rounded border border-yellow-400 bg-transparent placeholder-yellow-400 text-yellow-300" required />
+        <input type="datetime-local" class="p-3 rounded border border-yellow-400 bg-transparent placeholder-yellow-400 text-yellow-300" required />
+        <button type="submit" class="col-span-full bg-yellow-500 text-black font-semibold py-3 rounded hover:bg-yellow-400 transition">Send Booking Request</button>
+      </form>
+    </section>
+
+    <section id="booking" class="mt-20 bg-gray-900 p-10 rounded-lg shadow-lg lang bg">
+      <h2 class="text-3xl font-semibold mb-6">Бърза Резервация</h2>
+      <form class="grid grid-cols-1 md:grid-cols-2 gap-6 text-yellow-400">
+        <input type="text" placeholder="Име" class="p-3 rounded border border-yellow-400 bg-transparent placeholder-yellow-400 text-yellow-300" required />
+        <input type="tel" placeholder="Телефон" class="p-3 rounded border border-yellow-400 bg-transparent placeholder-yellow-400 text-yellow-300" required />
+        <input type="text" placeholder="От" class="p-3 rounded border border-yellow-400 bg-transparent placeholder-yellow-400 text-yellow-300" required />
+        <input type="text" placeholder="До" class="p-3 rounded border border-yellow-400 bg-transparent placeholder-yellow-400 text-yellow-300" required />
+        <input type="datetime-local" class="p-3 rounded border border-yellow-400 bg-transparent placeholder-yellow-400 text-yellow-300" required />
+        <button type="submit" class="col-span-full bg-yellow-500 text-black font-semibold py-3 rounded hover:bg-yellow-400 transition">Изпрати заявка</button>
       </form>
     </section>
 
     <!-- Reviews -->
-    <section class="mt-16 border-t border-yellow-600 pt-8">
+    <section class="mt-20 border-t border-yellow-600 pt-10">
       <h2 class="text-3xl font-semibold mb-6 lang en active">Customer Reviews</h2>
       <h2 class="text-3xl font-semibold mb-6 lang bg">Отзиви на клиенти</h2>
-      <blockquote class="border-l-4 border-yellow-400 pl-6 italic text-yellow-200 max-w-3xl">
-        “Punctual and professional service – very satisfied!”<br />
-        <footer class="mt-2 font-semibold text-yellow-300 lang en active">– Alex G.</footer>
-        <footer class="mt-2 font-semibold text-yellow-300 lang bg">– Алекс Г.</footer>
-      </blockquote>
+
+      <div id="reviewsList" class="space-y-6 text-yellow-300 max-w-4xl">
+        <blockquote class="border-l-4 border-yellow-400 pl-6 italic">
+          “Professional and punctual. 10/10”<br />
+          <footer class="mt-2 font-semibold text-yellow-300 lang en active">Ivan S.</footer>
+          <footer class="mt-2 font-semibold text-yellow-300 lang bg">Иван С.</footer>
+        </blockquote>
+        <blockquote class="border-l-4 border-yellow-400 pl-6 italic">
+          “Clean car, excellent driver.”<br />
+          <footer class="mt-2 font-semibold text-yellow-300 lang en active">Maria P.</footer>
+          <footer class="mt-2 font-semibold text-yellow-300 lang bg">Мария П.</footer>
+        </blockquote>
+      </div>
+
+      <!-- Add Review Form -->
+      <form id="reviewForm" class="mt-10 space-y-6 max-w-4xl bg-gray-900 p-6 rounded-lg shadow-lg lang en active">
+        <h3 class="text-2xl font-semibold mb-4">Add a Review</h3>
+        <input type="text" id="reviewerName" placeholder="Your Name" required class="w-full p-3 rounded border border-yellow-400 bg-transparent placeholder-yellow-400 text-yellow-300" />
+        <textarea id="reviewText" placeholder="Your Review" rows="4" required class="w-full p-3 rounded border border-yellow-400 bg-transparent placeholder-yellow-400 text-yellow-300"></textarea>
+        <button type="submit" class="bg-yellow-500 text-black font-semibold px-6 py-3 rounded hover:bg-yellow-400 transition">Submit Review</button>
+      </form>
+
+      <form id="reviewFormBG" class="mt-10 space-y-6 max-w-4xl bg-gray-900 p-6 rounded-lg shadow-lg lang bg">
+        <h3 class="text-2xl font-semibold mb-4">Добави Отзив</h3>
+        <input type="text" id="reviewerNameBG" placeholder="Вашето име" required class="w-full p-3 rounded border border-yellow-400 bg-transparent placeholder-yellow-400 text-yellow-300" />
+        <textarea id="reviewTextBG" placeholder="Вашият отзив" rows="4" required class="w-full p-3 rounded border border-yellow-400 bg-transparent placeholder-yellow-400 text-yellow-300"></textarea>
+        <button type="submit" class="bg-yellow-500 text-black font-semibold px-6 py-3 rounded hover:bg-yellow-400 transition">Изпрати отзив</button>
+      </form>
     </section>
 
-    <!-- Contact -->
-    <section class="mt-16 bg-gray-900 p-8 rounded-lg shadow-lg text-yellow-400 max-w-4xl mx-auto">
+    <!-- FAQ -->
+    <section class="mt-20 border-t border-yellow-600 pt-10 max-w-4xl mx-auto">
+      <h2 class="text-3xl font-semibold mb-6 lang en active">Frequently Asked Questions</h2>
+      <h2 class="text-3xl font-semibold mb-6 lang bg">Често задавани въпроси</h2>
+
+      <details class="mb-4 lang en active">
+        <summary class="cursor-pointer font-semibold text-yellow-400">What areas do you serve?</summary>
+        <p class="mt-2 text-yellow-300">We provide taxi service within Burgas city and transfers to all Bulgarian cities and airports.</p>
+      </details>
+      <details class="mb-4 lang bg">
+        <summary class="cursor-pointer font-semibold text-yellow-400">Кои райони обслужвате?</summary>
+        <p class="mt-2 text-yellow-300">Ние предлагаме таксиметрови услуги в град Бургас и трансфери до всички български градове и летища.</p>
+      </details>
+
+      <details class="mb-4 lang en active">
+        <summary class="cursor-pointer font-semibold text-yellow-400">How do I book a taxi?</summary>
+        <p class="mt-2 text-yellow-300">You can use our quick booking form above or contact us via WhatsApp or Viber.</p>
+      </details>
+      <details class="mb-4 lang bg">
+        <summary class="cursor-pointer font-semibold text-yellow-400">Как да резервирам такси?</summary>
+        <p class="mt-2 text-yellow-300">Можете да използвате формата за бърза резервация или да се свържете с нас през WhatsApp или Viber.</p>
+      </details>
+
+      <details class="mb-4 lang en active">
+        <summary class="cursor-pointer font-semibold text-yellow-400">Are your drivers licensed?</summary>
+        <p class="mt-2 text-yellow-300">Yes, all our drivers are professional, licensed, and trained to provide a safe and comfortable ride.</p>
+      </details>
+      <details class="mb-4 lang bg">
+        <summary class="cursor-pointer font-semibold text-yellow-400">Вашите шофьори лицензирани ли са?</summary>
+        <p class="mt-2 text-yellow-300">Да, всички наши шофьори са професионалисти, лицензирани и обучени за безопасно и комфортно пътуване.</p>
+      </details>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="mt-20 bg-gray-900 p-10 rounded-lg shadow-lg text-yellow-400 max-w-4xl mx-auto">
       <h2 class="text-3xl font-semibold mb-6 lang en active">Contact Us</h2>
       <h2 class="text-3xl font-semibold mb-6 lang bg">Свържете се с нас</h2>
-      <p class="mb-2 lang en active">📞 +359 887 594 996</p>
-      <p class="mb-2 lang bg">📞 +359 887 594 996</p>
-      <p class="mb-2 lang en active">📧 stanislav_stoianov73@abv.bg</p>
-      <p class="mb-2 lang bg">📧 stanislav_stoianov73@abv.bg</p>
-      <p class="lang en active">🕐 Available 24/7</p>
-      <p class="lang bg">🕐 Работно време 24/7</p>
-      <div class="flex gap-4 mt-6">
+      <p class="mb-2 lang en active">Phone: +359 887 594 996</p>
+      <p class="mb-2 lang bg">Телефон: +359 887 594 996</p>
+      <p class="mb-2 lang en active">Email: stanislav_stoianov73@abv.bg</p>
+      <p class="mb-2 lang bg">Имейл: stanislav_stoianov73@abv.bg</p>
+      <p class="lang en active">We are available 24/7, Monday to Sunday.</p>
+      <p class="lang bg">Работим 24/7, понеделник до неделя.</p>
+      <div class="flex gap-6 mt-6">
         <a href="https://wa.me/359887594996" target="_blank" class="flex items-center space-x-2 bg-black border border-green-500 hover:bg-green-500 hover:text-black text-green-500 font-bold px-5 py-3 rounded transition">
           <img src="images/whatsapp.svg" alt="WhatsApp" class="h-6 w-6" />
           <span>WhatsApp</span>
@@ -124,39 +221,77 @@
     </p>
   </footer>
 
-  <script>
-    // Language toggle logic
-    const enBtn = document.getElementById('enBtn');
-    const bgBtn = document.getElementById('bgBtn');
-    const enElems = document.querySelectorAll('.lang.en');
-    const bgElems = document.querySelectorAll('.lang.bg');
+<script>
+  // Language toggle logic
+  const enBtn = document.getElementById('enBtn');
+  const bgBtn = document.getElementById('bgBtn');
+  const enElems = document.querySelectorAll('.lang.en');
+  const bgElems = document.querySelectorAll('.lang.bg');
 
-    function setLang(lang) {
-      if(lang === 'en') {
-        enElems.forEach(el => el.classList.add('active'));
-        bgElems.forEach(el => el.classList.remove('active'));
-        enBtn.classList.add('underline');
-        enBtn.classList.remove('opacity-60');
-        bgBtn.classList.remove('underline');
-        bgBtn.classList.add('opacity-60');
-      } else {
-        bgElems.forEach(el => el.classList.add('active'));
-        enElems.forEach(el => el.classList.remove('active'));
-        bgBtn.classList.add('underline');
-        bgBtn.classList.remove('opacity-60');
-        enBtn.classList.remove('underline');
-        enBtn.classList.add('opacity-60');
-      }
+  function setLang(lang) {
+    if(lang === 'en') {
+      enElems.forEach(el => el.classList.add('active'));
+      bgElems.forEach(el => el.classList.remove('active'));
+      enBtn.classList.add('underline');
+      enBtn.classList.remove('opacity-60');
+      bgBtn.classList.remove('underline');
+      bgBtn.classList.add('opacity-60');
+    } else {
+      bgElems.forEach(el => el.classList.add('active'));
+      enElems.forEach(el => el.classList.remove('active'));
+      bgBtn.classList.add('underline');
+      bgBtn.classList.remove('opacity-60');
+      enBtn.classList.remove('underline');
+      enBtn.classList.add('opacity-60');
     }
+  }
 
-    enBtn.addEventListener('click', () => setLang('en'));
-    bgBtn.addEventListener('click', () => setLang('bg'));
+  enBtn.addEventListener('click', () => setLang('en'));
+  bgBtn.addEventListener('click', () => setLang('bg'));
 
-    // Initialize default language
-    setLang('en');
-  </script>
+  setLang('en');
+
+  // Reviews form add review
+  const reviewForm = document.getElementById('reviewForm');
+  const reviewsList = document.getElementById('reviewsList');
+
+  reviewForm.addEventListener('submit', e => {
+    e.preventDefault();
+    const name = document.getElementById('reviewerName').value.trim();
+    const text = document.getElementById('reviewText').value.trim();
+
+    if(!name || !text) return;
+
+    const blockquote = document.createElement('blockquote');
+    blockquote.classList.add('border-l-4', 'border-yellow-400', 'pl-6', 'italic', 'mt-6');
+    blockquote.innerHTML = `“${text}”<br /><footer class="mt-2 font-semibold text-yellow-300">${name}</footer>`;
+
+    reviewsList.appendChild(blockquote);
+
+    reviewForm.reset();
+  });
+
+  // Same for BG review form
+  const reviewFormBG = document.getElementById('reviewFormBG');
+  reviewFormBG.addEventListener('submit', e => {
+    e.preventDefault();
+    const name = document.getElementById('reviewerNameBG').value.trim();
+    const text = document.getElementById('reviewTextBG').value.trim();
+
+    if(!name || !text) return;
+
+    const blockquote = document.createElement('blockquote');
+    blockquote.classList.add('border-l-4', 'border-yellow-400', 'pl-6', 'italic', 'mt-6');
+    blockquote.innerHTML = `“${text}”<br /><footer class="mt-2 font-semibold text-yellow-300">${name}</footer>`;
+
+    reviewsList.appendChild(blockquote);
+
+    reviewFormBG.reset();
+  });
+</script>
 
 </body>
 </html>
+
 
 
